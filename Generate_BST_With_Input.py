@@ -25,8 +25,7 @@ def generateBST():
 	return root
 
 def insertNode(root, node):
-	# Assuming no duplicates being inserted
-	if (node._value < root._value):
+	if (node._value <= root._value):
 		if root._left is None:
 			root._left = node
 		else:
