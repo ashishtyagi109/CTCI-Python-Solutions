@@ -1,3 +1,5 @@
+from LinkedList_Helpers import *
+
 # With extra space not allowed
 # We will assume we have a doubly linked list
 def removeDuplicates(head):
@@ -19,3 +21,12 @@ def remove(node):
 	node.prev.next = node.next
 	if node.next is not None:
 		node.next.prev = node.prev
+
+if __name__ == '__main__':
+	head = generateList()
+	print 'Initial list: '
+	print getList(head)
+
+	removeDuplicates(head)
+	print '\nList without duplicates: '
+	print getList(head)
