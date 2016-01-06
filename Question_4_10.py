@@ -16,9 +16,9 @@ def preOrder(root, strRep):
 	if root is None:
 		strRep.write('X')
 		return
-	strRep.write(str(root._value))
-	preOrder(root._left, strRep)
-	preOrder(root._right, strRep)
+	strRep.write(str(root.value))
+	preOrder(root.left, strRep)
+	preOrder(root.right, strRep)
 
 if __name__ == '__main__':
 

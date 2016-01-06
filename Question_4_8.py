@@ -4,11 +4,11 @@ def commonAncestorHelper(root, p, q):
 	if root == p and root == q:
 		return root, True
 
-	x, ancOnLeft = commonAncestorHelper(root._left, p, q)
+	x, ancOnLeft = commonAncestorHelper(root.left, p, q)
 	if ancOnLeft: # ancestor already found on left
 		return x, True
 
-	y, ancOnRight = commonAncestorHelper(root._right, p, q)
+	y, ancOnRight = commonAncestorHelper(root.right, p, q)
 	if ancOnRight: # ancestor already found on right
 		return y, True
 

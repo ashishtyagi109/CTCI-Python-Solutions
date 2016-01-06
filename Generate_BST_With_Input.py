@@ -1,12 +1,12 @@
 class Node:
 	def __init__ (self, value, left = None, right = None, parent = None):
-		self._value = value
-		self._left = left
-		self._right = right
-		self._parent = parent
+		self.value = value
+		self.left = left
+		self.right = right
+		self.parent = parent
 
 	def __repr__(self):
-		return str(self._value)
+		return str(self.value)
 
 def generateBST():
 
@@ -26,15 +26,15 @@ def generateBST():
 	return root
 
 def insertNode(root, node):
-	if (node._value <= root._value):
-		if root._left is None:
-			root._left = node
-			node._parent = root
+	if (node.value <= root.value):
+		if root.left is None:
+			root.left = node
+			node.parent = root
 		else:
-			insertNode(root._left, node)
+			insertNode(root.left, node)
 	else:
-		if root._right is None:
-			root._right = node
-			node._parent = root
+		if root.right is None:
+			root.right = node
+			node.parent = root
 		else:
-			insertNode(root._right, node)		
+			insertNode(root.right, node)		

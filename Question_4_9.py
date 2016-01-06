@@ -16,10 +16,10 @@ def getAllArr(curArr, options):
 		optionsCopy = options[:] # Required because lines 20 and 22 update options. So 24 can't 'fix' list
 		node = optionsCopy.pop(i)
 		curArr.append(node)
-		if node._left is not None:
-			optionsCopy.append(node._left)
-		if node._right is not None:
-			optionsCopy.append(node._right)
+		if node.left is not None:
+			optionsCopy.append(node.left)
+		if node.right is not None:
+			optionsCopy.append(node.right)
 		getAllArr(curArr, optionsCopy)
 		# options.insert(i, node) # Fix damaged list after recursive call to getAllArr
 		curArr.pop() # Return curArr to original state

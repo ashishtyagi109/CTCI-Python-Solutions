@@ -10,11 +10,11 @@ def checkHeight(node):
 	if node is None:
 		return -1
 
-	leftHeight = checkHeight(node._left)
+	leftHeight = checkHeight(node.left)
 	if leftHeight == (-sys.maxint - 1):
 		return (-sys.maxint - 1)
 
-	rightHeight = checkHeight(node._right)
+	rightHeight = checkHeight(node.right)
 	if rightHeight == (-sys.maxint - 1):
 		return (-sys.maxint - 1)
 

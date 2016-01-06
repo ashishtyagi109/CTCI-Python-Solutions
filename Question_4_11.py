@@ -3,14 +3,14 @@
 # such that every node knows the size of its subtree
 
 def getRandomNode(root):
-	i = random.randint(0, root._size - 1)
+	i = random.randint(0, root.size - 1)
 	return getIthNode(root, i)
 
 def getIthNode(node, i):
-	leftsize = 0 if node._left is None else node._left._size
+	leftsize = 0 if node.left is None else node.left.size
 	if i < leftsize:
-		return getIthNode(node._left, i)
+		return getIthNode(node.left, i)
 	if i == leftsize:
 		return node
 	if i > leftsize:
-		return getIthNode(node._right, i - (node._left._size+1))
+		return getIthNode(node.right, i - (node.left.size+1))

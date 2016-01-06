@@ -1,31 +1,31 @@
 from Generate_BST_With_Input import *
 
 def successor(node):
-	if node._right is not None:
-		return leftMost(node._right)
-	return checkParent(node._parent, node)
+	if node.right is not None:
+		return leftMost(node.right)
+	return checkParent(node.parent, node)
 
 def leftMost(node):
-	while node._left is not None:
-		node = node._left
+	while node.left is not None:
+		node = node.left
 	return node
 
 def checkParent(parent, node):
 	if parent is None:
 		return None
-	if node == parent._left:
+	if node == parent.left:
 		return parent
 	else:
-		return checkParent(parent._parent, parent)
+		return checkParent(parent.parent, parent)
 
 def findInTree(root, value):
 	while root is not None:
-		if value < root._value:
-			root = root._left
-		elif value > root._value:
-			root = root._right
+		if value < root.value:
+			root = root.left
+		elif value > root.value:
+			root = root.right
 		else:
-			break # value = root._value
+			break # value = root.value
 	return root
 
 if __name__ == '__main__':

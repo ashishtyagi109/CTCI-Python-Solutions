@@ -8,7 +8,7 @@ def getCounts(node, targetSum, runningSum, runningSumCount):
 		return 0
 
 	pathCount = 0
-	runningSum += node._value
+	runningSum += node.value
 	if runningSum == targetSum:
 		# if current runningSum is equal to targetSum, we'll need to count it
 		pathCount += 1
@@ -20,8 +20,8 @@ def getCounts(node, targetSum, runningSum, runningSumCount):
 		runningSumCount[runningSum] += 1
 	else:
 		runningSumCount[runningSum] = 1
-	pathCount += getCounts(node._left, targetSum, runningSum, runningSumCount)
-	pathCount += getCounts(node._right, targetSum, runningSum, runningSumCount)
+	pathCount += getCounts(node.left, targetSum, runningSum, runningSumCount)
+	pathCount += getCounts(node.right, targetSum, runningSum, runningSumCount)
 	decrementInMap(runningSumCount, runningSum) # Fix map
 
 	return pathCount

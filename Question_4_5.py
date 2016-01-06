@@ -7,12 +7,12 @@ def checkRange(node, max = None, min = None):
 	if node is None:
 		return True
 	# left <= current < right
-	if (min is not None and node._value <= min or max is not None and node._value > max):
+	if (min is not None and node.value <= min or max is not None and node.value > max):
 		return False
 
-	if not checkRange(node._left, node._value, min):
+	if not checkRange(node.left, node.value, min):
 		return False
-	if not checkRange(node._right, max, node._value):
+	if not checkRange(node.right, max, node.value):
 		return False
 
 	return True
