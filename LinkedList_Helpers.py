@@ -26,6 +26,14 @@ class Node:
 	def __repr__(self):
 		return str(self.value)
 
+def findNodeInList(head, value):
+
+	while head is not None:
+		if head.value == value:
+			return head
+		head = head.next
+	return head
+
 def insertAtEnd(tail, node):
 	tail.next = node
 	node.prev = tail
