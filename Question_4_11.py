@@ -2,8 +2,10 @@
 # We will be assuming that the insert and delete functions have been modified \
 # such that every node knows the size of its subtree
 
+import random
+
 def getRandomNode(root):
-	i = random.randint(0, root.size - 1)
+	i = random.randint(0, root.size - 1) # 0 and root.size-1 inclusive
 	return getIthNode(root, i)
 
 def getIthNode(node, i):
