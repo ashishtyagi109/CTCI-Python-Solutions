@@ -22,5 +22,5 @@ class Stack(object):
 	def isEmpty(self):
 		return (len(self._stack) == 0)
 
-
-		
+	def size(self):
+		return len(self._stack)
