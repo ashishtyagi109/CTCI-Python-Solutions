@@ -5,7 +5,7 @@ from LinkedList_Helpers import *
 def removeDuplicates(head):
 	if head is None:
 		return head
-	duplicates = {}
+	duplicates = set()
 
 	node = head
 	while node is not None:
@@ -15,7 +15,8 @@ def removeDuplicates(head):
 			if node.next is not None:
 				node.next.prev = node.prev
 		else:
-			duplicates[node.value] = None
+			duplicates.add(node.value)
+			
 		node = node.next
 
 	return head
